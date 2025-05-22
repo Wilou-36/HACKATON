@@ -36,24 +36,29 @@
             }
         }
 
-        /* récupération de la liste des enfants*/
-        $sql = "SELECT e.id, e.nom, e.prenom, c.pays, c.ville
-                FROM enfant e
-                JOIN coordonnee c ON e.adresse = c.id";
+        public function getenfants()
+        {
 
-        $result = $conn->query($sql);
+       
+            /* récupération de la liste des enfants*/
+            $sql = "SELECT e.id, e.nom, e.prenom, c.pays, c.ville
+                    FROM enfant e
+                    JOIN coordonnee c ON e.adresse = c.id";
 
-        // Affichage des résultats
-        if ($result->num_rows > 0) {
-            echo "<h2>Liste des enfants</h2>";
-            echo "<ul>";
-            while ($row = $result->fetch_assoc()) {
-                echo "<li>" . htmlspecialchars($row["prenom"]) . " " . htmlspecialchars($row["nom"]) .
-                    " — " . htmlspecialchars($row["ville"]) . ", " . htmlspecialchars($row["pays"]) . "</li>";
-            }
-            echo "</ul>";
-        } else {
-            echo "Aucun enfant trouvé.";
+            $result = $this->mysqli->query($sql);
+
+            // Affichage des résultats
+            if ($result && $result->num_rows > 0) {
+                echo "<h2>Liste des enfants</h2>";
+                echo "<ul>";
+                while ($row = $result->fetch_assoc()) {
+                    echo "<li>" . htmlspecialchars($row["prenom"]) . " " . htmlspecialchars($row["nom"]) .
+                        " — " . htmlspecialchars($row["ville"]) . ", " . htmlspecialchars($row["pays"]) . "</li>";
+                }
+                echo "</ul>";
+            } else {
+                echo "Aucun enfant trouvé.";
+            } 
         }
     }
 
