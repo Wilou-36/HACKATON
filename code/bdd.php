@@ -7,7 +7,7 @@
         private $port= 3306;
 
         private $mysqli;
-        private $sql;
+        public $sql;
         private $conn;
 
         public function __construct() {
@@ -34,6 +34,26 @@
             if($this -> mysqli -> connect_errno != 0) {
                 $this -> mysqli -> close();
             }
+        }
+
+        /* récupération de la liste des enfants*/
+        $sql = "SELECT e.id, e.nom, e.prenom, c.pays, c.ville
+                FROM enfant e
+                JOIN coordonnee c ON e.adresse = c.id";
+
+        $result = $conn->query($sql);
+
+        // Affichage des résultats
+        if ($result->num_rows > 0) {
+            echo "<h2>Liste des enfants</h2>";
+            echo "<ul>";
+            while ($row = $result->fetch_assoc()) {
+                echo "<li>" . htmlspecialchars($row["prenom"]) . " " . htmlspecialchars($row["nom"]) .
+                    " — " . htmlspecialchars($row["ville"]) . ", " . htmlspecialchars($row["pays"]) . "</li>";
+            }
+            echo "</ul>";
+        } else {
+            echo "Aucun enfant trouvé.";
         }
     }
 
