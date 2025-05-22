@@ -1,4 +1,4 @@
--- Table coodonné -> enfant.adresse
+-- Table coodonnée -> enfant.adresse
 CREATE TABLE coordonée(
    id INT,
    pays VARCHAR(50),
@@ -16,7 +16,7 @@ CREATE TABLE nom_cadeau(
 
 -- ref les enfants
 CREATE TABLE Enfant(
-   ID INT,
+   id INT,
    Nom VARCHAR(50),
    Prenom VARCHAR(50),
    adresse VARCHAR(50),
@@ -34,11 +34,14 @@ CREATE TABLE cadeau(
 );
 
 -- ref les enfants gentil et méchant
+/*sage booléen 
+   true -> enfant sage
+   false -> enfant */
 CREATE TABLE enfant_gentil(
    ID INT,
    id_1 VARCHAR(50),
    sage LOGICAL,
-   PRIMARY KEY(ID, id_1),
-   FOREIGN KEY(ID) REFERENCES Enfant(ID),
-   FOREIGN KEY(id_1) REFERENCES cadeau(id)
+   PRIMARY KEY(id_enfant, id_cadeau),
+   FOREIGN KEY(id_enfant) REFERENCES Enfant(id),
+   FOREIGN KEY(id_cadeau) REFERENCES cadeau(id)
 );
