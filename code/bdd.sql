@@ -1,47 +1,40 @@
--- Table coodonnée -> enfant.adresse
-CREATE TABLE coordonée(
-   id INT,
+-- Table des coordonnées (adresse = identifiant ici)
+CREATE TABLE coordonnee (
+   id INT PRIMARY KEY,
    pays VARCHAR(50),
-   ville VARCHAR(50),
-   PRIMARY KEY(id)
+   ville VARCHAR(50)
 );
 
---ref le cadeau
-CREATE TABLE nom_cadeau(
-   id INT,
+-- Table des noms de cadeaux
+CREATE TABLE nom_cadeau (
+   id INT PRIMARY KEY,
    nom VARCHAR(50),
-   type VARCHAR(50),
-   PRIMARY KEY(id)
+   type VARCHAR(50)
 );
 
--- ref les enfants
-CREATE TABLE Enfant(
-   id INT,
-   Nom VARCHAR(50),
-   Prenom VARCHAR(50),
-   adresse VARCHAR(50),
-   id_1 INT NOT NULL,
-   PRIMARY KEY(ID),
-   FOREIGN KEY(id_1) REFERENCES coordonée(id)
+-- Table des enfants (adresse est une clé étrangère vers coordonnee.id)
+CREATE TABLE enfant (
+   id INT PRIMARY KEY,
+   nom VARCHAR(50),
+   prenom VARCHAR(50),
+   adresse INT NOT NULL,
+   FOREIGN KEY (adresse) REFERENCES coordonnee(id)
 );
 
---ref pour les cadeaux
-CREATE TABLE cadeau(
-   id VARCHAR(50),
-   id_1 INT NOT NULL,
-   PRIMARY KEY(id),
-   FOREIGN KEY(id_1) REFERENCES nom_cadeau(id)
+-- Table des cadeaux attribués aux enfants
+CREATE TABLE cadeau (
+   enfant_id INT,
+   cadeau_id INT,
+   PRIMARY KEY(enfant_id, cadeau_id),
+   FOREIGN KEY (enfant_id) REFERENCES enfant(id),
+   FOREIGN KEY (cadeau_id) REFERENCES nom_cadeau(id)
 );
 
--- ref les enfants gentil et méchant
-/*sage booléen 
-   true -> enfant sage
-   false -> enfant */
-CREATE TABLE enfant_gentil(
-   ID INT,
-   id_1 VARCHAR(50),
-   sage LOGICAL,
-   PRIMARY KEY(id_enfant, id_cadeau),
-   FOREIGN KEY(id_enfant) REFERENCES Enfant(id),
-   FOREIGN KEY(id_cadeau) REFERENCES cadeau(id)
+-- Table des enfants gentils (réutilise la clé composée de cadeau)
+CREATE TABLE enfant_gentil (
+   enfant_id INT,
+   cadeau_id INT,
+   PRIMARY KEY(enfant_id, cadeau_id),
+   FOREIGN KEY (enfant_id, cadeau_id) REFERENCES cadeau(enfant_id, cadeau_id)
 );
+
