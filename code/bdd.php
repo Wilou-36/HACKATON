@@ -42,7 +42,7 @@
 
        
             /* récupération de la liste des enfants*/
-            $sql = "SELECT enfant.id, enfant.nom, enfant.prenom, coodonnee.pays, ccoodonnee.ville
+            $sql = "SELECT enfant.id, enfant.nom, enfant.prenom, coodonnee.pays, coodonnee.ville
                     FROM enfant 
                     INNER JOIN coordonnee  ON enfant.adresse = coodonnee.id";
 
