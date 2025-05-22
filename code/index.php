@@ -1,5 +1,13 @@
 <?php
-    include('ap.php');
+    include('bdd.php');
+    $db = new BDD();
+
+    if ($db->connexion()) {
+        $db->getEnfants();
+        $db->deconnexion();
+    } else {
+        echo "Connexion échouée.";
+    }
 
     ?>
 
