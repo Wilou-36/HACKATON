@@ -2,7 +2,7 @@
     class BDD {
         private $password = 'papanoel';
         private $username = 'papanoel';
-        private $servername = '192.168.10.20';
+        private $servername = '172.16.119.10';
         private $dbname = 'Noel';
         private $port= 3306;
 
