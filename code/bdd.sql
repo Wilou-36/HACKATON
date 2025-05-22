@@ -50,7 +50,18 @@ INSERT INTO nom_cadeau (id, nom, type) VALUES
 (1, 'Train miniature', 'Jouet'),
 (2, 'Livre de contes', 'Livre'),
 (3, 'Poupée', 'Jouet'),
-(4, 'Boîte de Lego', 'Jeu de construction');
+(4, 'Boîte de Lego', 'Jeu de construction')
+(5, 'Camion de pompier', 'Jouet'),
+(6, 'Puzzle animaux', 'Jeu éducatif'),
+(7, 'Fifa 17', 'jeu vidéo'),
+(8, 'Coloriage magique', 'Activité'),
+(9, 'Microscope junior', 'Jeu scientifique'),
+(10, 'Kit de peinture', 'Activité créative'),
+(11, 'Jeu de société - Uno', 'Jeu de société'),
+(12, 'Balle rebondissante', 'Sport'),
+(13, 'Harmonica', 'Instrument de musique'),
+(14, 'just dance', 'jeu vidéo'),
+(15, 'Voiture télécommandée', 'Jouet électronique');
 
 --Table enfant
 INSERT INTO enfant (id, nom, prenom, adresse) VALUES

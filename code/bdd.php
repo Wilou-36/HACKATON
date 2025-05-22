@@ -20,7 +20,8 @@
             
             $this -> mysqli = new mysqli($this->servername, $this->username, $this->password, $this->dbname, $this->port);
 
-            if($this -> mysqli -> connect_errno != 0) {
+            if($this -> mysqli -> connect_errno ) {
+                echo "Erreur de connexion MySQL : " . $this->mysqli->connect_error;
                 return false;
             }
             else {
@@ -31,7 +32,7 @@
         
         /* Déconnexion à la base de données */
         public function deconnexion() {
-            if($this -> mysqli -> connect_errno != 0) {
+            if($this -> mysqli ) {
                 $this -> mysqli -> close();
             }
         }
@@ -41,9 +42,9 @@
 
        
             /* récupération de la liste des enfants*/
-            $sql = "SELECT e.id, e.nom, e.prenom, c.pays, c.ville
-                    FROM enfant e
-                    JOIN coordonnee c ON e.adresse = c.id";
+            $sql = "SELECT enfant.id, enfant.nom, enfant.prenom, coodonnee.pays, ccoodonnee.ville
+                    FROM enfant 
+                    INNER JOIN coordonnee  ON enfant.adresse = coodonnee.id";
 
             $result = $this->mysqli->query($sql);
 
@@ -57,7 +58,7 @@
                 }
                 echo "</ul>";
             } else {
-                echo "Aucun enfant trouvé.";
+                echo "Aucun enfant trouvé." . $this->mysqli->error;
             } 
         }
     }
