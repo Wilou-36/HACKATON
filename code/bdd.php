@@ -1,7 +1,7 @@
 <?php
     class BDD {
-        private $password = 'noel';
-        private $username = 'noel';
+        private $password = 'papnoel';
+        private $username = 'papnoel';
         private $servername = '192.168.10.20';
         private $dbname = 'Noel';
         private $port= 3306;
