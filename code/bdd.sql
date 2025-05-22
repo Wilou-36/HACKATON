@@ -38,3 +38,36 @@ CREATE TABLE enfant_gentil (
    FOREIGN KEY (enfant_id, cadeau_id) REFERENCES cadeau(enfant_id, cadeau_id)
 );
 
+
+--Table coordonnee
+INSERT INTO coordonnee (id, pays, ville) VALUES
+(1, 'France', 'Paris'),
+(2, 'Canada', 'Montréal'),
+(3, 'Japon', 'Tokyo');
+
+--Table nom_cadeau
+INSERT INTO nom_cadeau (id, nom, type) VALUES
+(1, 'Train miniature', 'Jouet'),
+(2, 'Livre de contes', 'Livre'),
+(3, 'Poupée', 'Jouet'),
+(4, 'Boîte de Lego', 'Jeu de construction');
+
+--Table enfant
+INSERT INTO enfant (id, nom, prenom, adresse) VALUES
+(1, 'Dupont', 'Léo', 1),
+(2, 'Martin', 'Chloé', 2),
+(3, 'Tanaka', 'Haruto', 3);
+
+--Table cadeau
+INSERT INTO cadeau (enfant_id, cadeau_id) VALUES
+(1, 1),  -- Léo reçoit un train miniature
+(1, 2),  -- Léo reçoit aussi un livre de contes
+(2, 3),  -- Chloé reçoit une poupée
+(3, 4);  -- Haruto reçoit une boîte de Lego
+
+--Table enfant_gentil
+INSERT INTO enfant_gentil (enfant_id, cadeau_id) VALUES
+(1, 1),
+(1, 2),
+(3, 4);
+
