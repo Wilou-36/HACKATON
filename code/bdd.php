@@ -1,9 +1,9 @@
 <?php
     class BDD {
-        private $password = '';
-        private $username = '';
-        private $servername = '';
-        private $dbname = '';
+        private $password = 'noel';
+        private $username = 'noel';
+        private $servername = '192.168.10.20';
+        private $dbname = 'Noel';
         private $port= 3306;
 
         private $mysqli;
