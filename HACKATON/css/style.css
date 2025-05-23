@@ -1,0 +1,40 @@
+body {
+  background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 3em;
+  color: #c0392b;
+}
+
+.menu {
+  margin-top: 30px;
+}
+
+.menu a {
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  background-color: #27ae60;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: #2ecc71;
+}
+
+.emoji {
+  font-size: 2em;
+}
+
+footer {
+  margin-top: 50px;
+  color: #999;
+}
