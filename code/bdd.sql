@@ -38,12 +38,52 @@ CREATE TABLE enfant_gentil (
    FOREIGN KEY (enfant_id, cadeau_id) REFERENCES cadeau(enfant_id, cadeau_id)
 );
 
+--Table livraison
+CREATE TABLE livraison (
+    ->    id INT,
+    ->    date_livraison DATE,
+    ->    date_arrive DATE,
+    ->    PRIMARY KEY(id)
+    -> );
 
+--Table planification
+
+--Table atelier
+
+--Table lutin
+MariaDB [Noel]> CREATE TABLE lutin (
+    ->    id INT,
+    ->    nom VARCHAR(50),
+    ->    PRIMARY KEY(id)
+    -> );
+
+--Table livrcadeau
+ CREATE TABLE cadeau_livraison (
+    ->     enfant_id INT,
+    ->     cadeau_id INT,
+    ->     livraison_id INT,
+    ->     PRIMARY KEY (enfant_id, cadeau_id, livraison_id),
+    ->     FOREIGN KEY (enfant_id, cadeau_id) REFERENCES cadeau(enfant_id, cadeau_id),
+    ->     FOREIGN KEY (livraison_id) REFERENCES livraison(id)
+    -> );
+
+--
+ CREATE TABLE Asso_8 (
+    ->    id INT,        -- Référence à atelier.id
+    ->    id_1 INT,      -- Référence à lutin.id
+    ->    PRIMARY KEY(id, id_1),
+    ->    FOREIGN KEY(id) REFERENCES atelier(id),
+    ->    FOREIGN KEY(id_1) REFERENCES lutin(id)
+    -> );
 --Table coordonnee
 INSERT INTO coordonnee (id, pays, ville) VALUES
 (1, 'France', 'Paris'),
 (2, 'Canada', 'Montréal'),
 (3, 'Japon', 'Tokyo');
+UPDATE coordonnee SET rue = '12 rue de la Paix' WHERE id = 1;
+UPDATE coordonnee SET rue = '88 avenue des Neiges' WHERE id = 2;
+UPDATE coordonnee SET rue = '5-1-1 Harajuku' WHERE id = 3;
+
 
 --Table nom_cadeau
 INSERT INTO nom_cadeau (id, nom, type) VALUES
@@ -81,4 +121,42 @@ INSERT INTO enfant_gentil (enfant_id, cadeau_id) VALUES
 (1, 1),
 (1, 2),
 (3, 4);
+
+-- Livraison
+INSERT INTO livraison (id, date_livraison, date_arrive)
+VALUES 
+  (1, '2025-12-20', '2025-12-24'),
+  (2, '2025-12-21', '2025-12-25');
+
+
+--Lutin
+INSERT INTO lutin (id, nom)
+VALUES 
+  (1, 'Léo'),
+  (2, 'Noisette');
+
+-- atelier
+NSERT INTO atelier (id, nom, capacite_max)
+VALUES 
+  (1, 'Atelier Nord', 10),
+  (2, 'Atelier Sud', 8)
+  (3, 'Atelier Est', 12);
+
+  --planif
+  INSERT INTO planification (id, id_cadeau, id_atelier, date_fabrication)
+VALUES 
+  (1, 1, 1, '2025-11-15'),
+  (2, 2, 2, '2025-11-20');
+
+--cad-liv
+INSERT INTO cadeau_livraison (enfant_id, cadeau_id, livraison_id)
+VALUES 
+  (1, 1, 1),
+  (1, 2, 2);
+
+--at-lut
+INSERT INTO Asso_8 (id, id_1)
+VALUES 
+  (1, 1),
+  (2, 2);
 
