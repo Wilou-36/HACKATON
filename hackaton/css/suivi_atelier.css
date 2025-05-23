@@ -1,0 +1,108 @@
+#atelier-info {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 700px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.8s ease-out;
+}
+
+#atelier-info h2,
+#atelier-info h3 {
+  color: #ffd700;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#atelier-info p,
+#atelier-info ul {
+  margin: 10px 0 20px;
+  font-size: 16px;
+}
+
+#atelier-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#atelier-info ul li {
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #ffd700;
+  border-radius: 8px;
+}
+
+#atelier-info ul li .date {
+  display: block;
+  font-size: 13px;
+  color: #ccc;
+  margin-top: 4px;
+}
+
+#atelier-info p.vide {
+  color: #ddd;
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#lutin-info {
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 800px;
+    background: linear-gradient(to right, #5c2b1e, #7b4b3a);
+    box-shadow: 0 0 15px rgba(255, 223, 186, 0.4);
+    border-radius: 20px;
+    color: #fffbea;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+    backdrop-filter: blur(8px);
+}
+
+#lutin-info h2,
+#lutin-info h3 {
+    font-size: 1.4rem;
+    margin-top: 1.2rem;
+    color: #ffe58f;
+    text-shadow: 1px 1px 3px #000;
+}
+
+#lutin-info ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+#lutin-info li {
+    padding: 0.5rem;
+    border-bottom: 1px dashed #fff2c7;
+}
+
+#lutin-info .date {
+    color: #ffddaa;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+#lutin-info .vide {
+    color: #ccc;
+    font-style: italic;
+    margin-top: 1rem;
+}
+

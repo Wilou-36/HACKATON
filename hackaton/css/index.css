@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+body {
+  font-family: 'Cookie', cursive;
+  background: linear-gradient(to bottom right, #d32f2f, #388e3c);
+  color: #fff8e1;
+  text-align: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #ffeb3b;
+  margin-bottom: 40px;
+  text-shadow: 4px 4px 10px #6d4c41;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.nav-button {
+  padding: 15px 30px;
+  background: #fbc02d;
+  color: #4e342e;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button:hover {
+  background-color: #ffee58;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #fff176;
+}
+
+main {
+  font-size: 1.6rem;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 20px #fbc02d;
+}

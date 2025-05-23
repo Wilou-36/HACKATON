@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
+
+body {
+  font-family: 'Mountains of Christmas', cursive;
+  background: linear-gradient(to bottom right, #c62828, #2e7d32);
+  color: #fff8e1;
+  text-align: center;
+  padding: 60px 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  color: #fff176;
+  text-shadow: 3px 3px 8px #d84315;
+}
+
+form {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 450px;
+  margin: auto;
+  box-shadow: 0 0 25px 5px #fbc02d;
+  position: relative;
+}
+
+form::before {
+  content: "🎄 🎅 🎁";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+input[type="text"] {
+  width: 85%;
+  padding: 15px;
+  margin: 12px 0;
+  border: 2px solid #ffd54f;
+  border-radius: 12px;
+  background-color: #fffde7;
+  font-size: 1.3em;
+  color: #4e342e;
+}
+
+input::placeholder {
+  color: #6d4c41;
+  font-weight: bold;
+}
+
+button {
+  padding: 18px 35px;
+  margin-top: 20px;
+  background-color: #d32f2f;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px #fbc02d;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+}
+
+select {
+  width: 85%;
+  padding: 15px;
+  margin-top: 10px;
+  border: 2px solid #ffd54f;
+  border-radius: 12px;
+  background-color: #fffde7;
+  color: #4e342e;
+  font-size: 1.2em;
+  font-family: 'Mountains of Christmas', cursive;
+  box-shadow: 0 0 8px #fbc02d;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%234e342e' viewBox='0 0 24 24' width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 1.2em;
+}
+ 
+select:focus {
+  outline: none;
+  box-shadow: 0 0 12px #ffd740;
+  background-color: #fff9c4;
+}
+
+ /* Conteneur principal pour les messages */
+.container {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 50px 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 25px 5px #fbc02d;
+}
+
+/* Messages de succès */
+.success {
+  background-color: #388e3c;
+  color: #fffde7;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 12px #66bb6a;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #1b5e20;
+}
+
+/* Messages d'erreur */
+.error {
+  background-color: #c62828;
+  color: #fffde7;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 12px #ef5350;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #7f0000;
+}
+
+
