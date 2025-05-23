@@ -1,15 +1,3 @@
-<?php
-    require_once('bdd.php');
-    $bdd = new BDD();
-
-    if ($db->connexion()) {
-        $db->getEnfants();
-        $db->deconnexion();
-    } else {
-        echo "Connexion échouée.";
-    }
-
-    ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -30,4 +18,6 @@
   </form>
 </body>
 </html>
+
+
 
